@@ -1,0 +1,19 @@
+{
+  "name": "nosch",
+  "version": "1.0.0",
+  "description": "Webove stranky nosch.cz",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaWEEs/noschcms.git"
+  },
+  "author": "David Třetina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DaWEEs/noschcms/issues"
+  },
+  "homepage": "https://github.com/DaWEEs/noschcms#readme"
+}
