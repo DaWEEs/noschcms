@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrační formulář</title>
+</head>
+<body>
+    <h1></h1>
+    <form id="login-form">
+        <input type="text" autocomplete="off" id="username" placeholder="Uživatelské jméno" />
+        <input type="password" autocomplete="off" id="password" placeholder="Heslo" />
+        <input type="submit" value="Přihlásit" />
+    </form>
+
+    <script>
+        const form = document.getElementById("login-form");
+        form.addEventListener("submit", loginUser);
+
+        async function loginUser(event){
+            event.preventDefault();
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            const result = await fetch("/api/login",{
+                method:"POST",
+                headers:{
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    username,
+                    password
+                })
+            }).then((res) => res.json())
+
+            if(result.status==="ok"){
+                console.log("Mám token",result.data);
+                localStorage.setItem("token", result.data)
+            }
+            else{
+                alert(result.error)
+            }
+        }
+    </script>
+</body>
+</html>

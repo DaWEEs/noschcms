@@ -2,9 +2,10 @@
   "name": "nosch",
   "version": "1.0.0",
   "description": "Webove stranky nosch.cz",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./server.js localhost 8080"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,15 @@
   "bugs": {
     "url": "https://github.com/DaWEEs/noschcms/issues"
   },
-  "homepage": "https://github.com/DaWEEs/noschcms#readme"
+  "homepage": "https://github.com/DaWEEs/noschcms#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.8",
+    "nodemon": "^2.0.4",
+    "path": "^0.12.7",
+    "vue": "^2.6.12"
+  }
 }
